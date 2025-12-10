@@ -1,0 +1,42 @@
+/* Overall layout */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+    background: #f4f4f4;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Two-column container */
+.container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Reader + Flashcards boxes */
+.reader,
+.flashcards {
+    flex: 1;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fff;
+}
+
+/* Reader textarea */
+#reader {
+    width: 100%;
+    height: 250px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* Flashcards container */
+#cards-container {
+    margin-top: 10px;
+}
