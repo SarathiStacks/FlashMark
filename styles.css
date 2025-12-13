@@ -5,11 +5,80 @@ body {
 }
 
 /* Header */
-header {
-    background: #f4f4f4;
-    padding: 15px;
-    border-bottom: 1px solid #ddd;
+.app-header {
+  display: grid;
+  grid-template-columns: 220px auto 220px; /* FIXED SIDE WIDTH */
+  align-items: center;
+
+  padding: 28px 40px;
+  background: linear-gradient(135deg, #7bd9af, #0c8948);
+  border-bottom: 3px solid #0b9253;
+   
 }
+
+
+.icon{
+    font-size: 36px;
+    opacity: 0.85;
+    display: inline-block;
+    
+}
+.left-icons {
+  display: flex;
+  justify-content: space-between; /* THIS spreads icons */
+  padding-right: 30px;            /* pulls them toward title */
+}
+
+.right-icons {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 30px;
+}
+.left-icons .icon:nth-child(1){
+    transform:rotate(-10deg);
+    
+}
+.left-icons .icon:nth-child(2){
+    transform:rotate(6deg);
+   
+}
+.right-icons .icon:nth-child(1){
+    transform:rotate(8deg);
+}
+.right-icons .icon:nth-child(2){
+    transform:rotate(-6deg);
+}
+
+.header-text{
+    text-align: center;
+    
+}
+
+.app-header h1{
+    font-size: 34px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #03412f;
+    transition: 
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.app-header h1:hover {
+  transform: translateY(-2px) scale(1.03);
+
+  text-shadow:
+   0 0 8px rgba(13, 132, 98, 0.6),
+    0 0 16px rgba(15, 131, 98, 0.4);
+}
+
+.app-header .tagline {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  color: #044330;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+}
+
 
 /* Two-column container */
 .container {
