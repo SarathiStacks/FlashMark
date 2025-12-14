@@ -82,30 +82,112 @@ body {
 
 /* Two-column container */
 .container {
-    display: flex;
-    gap: 20px;
-    padding: 20px;
+  display: flex;
+  gap: 24px;
+  padding: 24px;
+
+background: linear-gradient(135deg, #7bd9af, #0c8948);
+
+  min-height: calc(100vh - 120px);
+  align-items: flex-start;
 }
 
 /* Reader + Flashcards boxes */
 .reader,
 .flashcards {
-    flex: 1;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background: #fff;
+  flex: 1;
+  background: #afd2c0;
+  border-radius: 12px;
+  padding: 16px;
+  border: 1px solid #bfe3d2;
+
+   box-shadow: 
+    0 10px 30px rgba(12, 137, 72, 0.18);
+}
+
+
+.flashcards{
+    display: flex;
+    flex-direction: column;
+   
+}
+.flashcards-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+}
+#search{
+    border-radius: 18px;
+    font-size: 14px;
+    width: 430px;
+    height: 40px;
+    padding: 8px 10px;
+    border: 2px solid #014206;
+    
 }
 
 /* Reader textarea */
 #reader {
-    width: 100%;
-    height: 250px;
-    padding: 10px;
-    margin-bottom: 10px;
+   width: 100%;
+  height: 280px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  resize: none;
+}
+#add-selection {
+  display: block;
+  margin-left: auto;
+  margin-top: 14px;
+
+  padding: 14px 32px;   /* wider & taller */
+  font-size: 17px;
+  font-weight: 600;
+
+  border: none;
+  border-radius: 999px; /* pill shape */
+
+  background: linear-gradient(
+    135deg,
+    #0c8948,
+    #04522b
+  );
+
+  color: white;
+  cursor: pointer;
+   transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
 }
 
+#add-selection:hover{
+    transform: translateY(-2px) scale(1.03);
+
+ box-shadow:
+    0 0 12px rgba(10, 125, 66, 0.6),
+    0 0 28px rgba(6, 99, 51, 0.4);
+
+  background: linear-gradient(
+    135deg,
+    #11b463,
+    #04532a
+  );
+}
 /* Flashcards container */
 #cards-container {
-    margin-top: 10px;
+  margin-top: 10px;
+  min-height: 290px;
+  border-radius: 8px;
+  background: #f8f9fa;
+  padding: 12px;
+ 
 }
+.reader h2,
+.flashcards h2 {
+  margin: 0 0 12px 0;
+}
+
+

@@ -3,20 +3,20 @@
     <header class="app-header">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
-         <div class="left-icons">
+        <div class="left-icons">
           <span class="icon">✏️</span>
           <span class="icon">📘</span>
         </div>
         <div class="header-text">
              <h1>Document Highlighter</h1>
-        <p class="tagline">
-        Highlight text and turn it into smart flashcards Right Away!
-        </p>
+             <p class="tagline">
+                 Highlight text and turn it into smart flashcards Right Away!
+             </p>
         </div>
-         <div class="right-icons">
+        <div class="right-icons">
             <span class="icon">✏️</span>
             <span class="icon">📝</span>
-        </div>
+        </div> 
         
        
         <link rel="stylesheet" href="styles.css">
@@ -33,14 +33,15 @@
         </section>
 
         <!-- RIGHT: Flashcards -->
-        <section class="flashcards">
+    <section class="flashcards">
+        <div class="flashcards-header">
             <h2>Flashcards</h2>
-            <div id="cards-container"></div>
+            <input id="search" placeholder="Search cards...">
+        </div>
+        <div id="cards-container"></div>
         </section>
-        <input id="search" placeholder="Search cards...">
-
-
-    </main>
+       
+</main>
     <script src="app.js"></script>
 
 </body>
