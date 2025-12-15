@@ -1,73 +1,48 @@
 /* Overall layout */
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
+  margin: 0;
+  font-family: Arial, sans-serif;
 }
 
 /* Header */
 .app-header {
   display: grid;
-  grid-template-columns: 220px auto 220px; /* FIXED SIDE WIDTH */
+  grid-template-columns: 220px auto 220px;
   align-items: center;
-
   padding: 28px 40px;
   background: linear-gradient(135deg, #7bd9af, #0c8948);
   border-bottom: 3px solid #0b9253;
-   
 }
 
-
-.icon{
-    font-size: 36px;
-    opacity: 0.85;
-    display: inline-block;
-    
-}
-.left-icons {
-  display: flex;
-  justify-content: space-between; /* THIS spreads icons */
-  padding-right: 30px;            /* pulls them toward title */
+.icon {
+  font-size: 36px;
+  opacity: 0.85;
 }
 
+.left-icons,
 .right-icons {
   display: flex;
   justify-content: space-between;
-  padding-left: 30px;
-}
-.left-icons .icon:nth-child(1){
-    transform:rotate(-10deg);
-    
-}
-.left-icons .icon:nth-child(2){
-    transform:rotate(6deg);
-   
-}
-.right-icons .icon:nth-child(1){
-    transform:rotate(8deg);
-}
-.right-icons .icon:nth-child(2){
-    transform:rotate(-6deg);
 }
 
-.header-text{
-    text-align: center;
-    
+.header-text {
+  text-align: center;
 }
 
-.app-header h1{
-    font-size: 34px;
-    font-weight: 600;
-    margin-bottom: 6px;
-    color: #03412f;
-    transition: 
+.app-header h1 {
+  font-size: 34px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #03412f;
+   transition:
     transform 0.3s ease,
-    box-shadow 0.3s ease;
+    text-shadow 0.3s ease;
 }
 .app-header h1:hover {
   transform: translateY(-2px) scale(1.03);
 
   text-shadow:
-   0 0 8px rgba(13, 132, 98, 0.6),
+    0 0 8px rgba(13, 132, 98, 0.6),
     0 0 16px rgba(15, 131, 98, 0.4);
 }
 
@@ -75,24 +50,19 @@ body {
   font-family: 'Poppins', sans-serif;
   font-size: 16px;
   color: #044330;
-  font-weight: 400;
-  letter-spacing: 0.3px;
 }
 
-
-/* Two-column container */
+/* Main container */
 .container {
   display: flex;
   gap: 24px;
   padding: 24px;
-
-background: linear-gradient(135deg, #7bd9af, #0c8948);
-
+  background: linear-gradient(135deg, #7bd9af, #0c8948);
   min-height: calc(100vh - 120px);
   align-items: flex-start;
 }
 
-/* Reader + Flashcards boxes */
+/* Panels */
 .reader,
 .flashcards {
   flex: 1;
@@ -100,94 +70,227 @@ background: linear-gradient(135deg, #7bd9af, #0c8948);
   border-radius: 12px;
   padding: 16px;
   border: 1px solid #bfe3d2;
-
-   box-shadow: 
-    0 10px 30px rgba(12, 137, 72, 0.18);
+  box-shadow: 0 10px 30px rgba(12, 137, 72, 0.18);
 }
 
+/* Headings */
+.reader h2,
+.flashcards h2 {
+  margin: 0;
+  color: #03412f;
+  padding-bottom: 11px;
+}
 
-.flashcards{
-    display: flex;
-    flex-direction: column;
-   
+/* Flashcards header */
+.flashcards-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.flashcards-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 14px;
+
+/* Search */
+#search {
+  width: 430px;
+  height: 40px;
+  padding: 8px 10px;
+  border-radius: 18px;
+  border: 2px solid #014206;
+  font-size: 14px;
 }
-#search{
-    border-radius: 18px;
-    font-size: 14px;
-    width: 430px;
-    height: 40px;
-    padding: 8px 10px;
-    border: 2px solid #014206;
-    
+
+/* Shared content box (THIS IS THE KEY) */
+.content-box {
+  margin-top: 18px;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 12px;
+  min-height: 280px;
 }
 
 /* Reader textarea */
 #reader {
-   width: 100%;
-  height: 280px;
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 14px;
+  width: 100%;
+  height: 220px;
+  border: none;
+  outline: none;
   resize: none;
+  font-size: 14px;
+  color: #03412f;
 }
+
+/* Button */
 #add-selection {
   display: block;
   margin-left: auto;
   margin-top: 14px;
-
-  padding: 14px 32px;   /* wider & taller */
+  padding: 14px 32px;
   font-size: 17px;
   font-weight: 600;
-
   border: none;
-  border-radius: 999px; /* pill shape */
-
-  background: linear-gradient(
-    135deg,
-    #0c8948,
-    #04522b
-  );
-
+  border-radius: 999px;
+  background: linear-gradient(135deg, #0c8948, #04522b);
   color: white;
   cursor: pointer;
-   transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    background 0.25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-#add-selection:hover{
-    transform: translateY(-2px) scale(1.03);
-
- box-shadow:
+#add-selection:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow:
     0 0 12px rgba(10, 125, 66, 0.6),
     0 0 28px rgba(6, 99, 51, 0.4);
+}
+.flashcards .content-box {
+  padding: 14px;   /* was 12px */
+}
 
-  background: linear-gradient(
-    135deg,
-    #11b463,
-    #04532a
-  );
+/* Flashcard controls */
+/* Flashcard */
+.card {
+  background: linear-gradient(135deg, #a6edab, #50c458);
+  border-radius: 14px;
+  padding: 16px 18px;
+  margin-bottom: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+
+  box-shadow:
+    0 6px 18px rgba(255, 165, 0, 0.25);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
-/* Flashcards container */
-#cards-container {
-  margin-top: 10px;
-  min-height: 290px;
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 10px 26px rgba(255, 165, 0, 0.35);
+}
+
+/* Card text */
+.card-text {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #154f0a;
+  margin-bottom: 12px;
+  white-space: pre-wrap;
+  font-weight: 600;
+}
+
+/* Card controls (Edit / Delete) */
+.card-controls {
+  display: flex;
+  gap: 10px;
+}
+
+/* Buttons base */
+.card-controls button {
+  padding: 8px 15px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+/* Edit button */
+.card-edit {
+  background: linear-gradient(135deg, #ffb703, #fb8500);
+  color: #ffffff;
+}
+
+.card-edit:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 10px rgba(255, 183, 3, 0.6);
+}
+
+/* Delete button */
+.card-delete {
+  background: linear-gradient(135deg, #e63946, #c1121f);
+  color: #ffffff;
+}
+
+.card-delete:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 10px rgba(225, 57, 70, 0.6);
+}
+
+/* Edit mode textarea */
+.edit-input {
+  width: 100%;
+  min-height: 80px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #e5a05a;
+  font-size: 14px;
+  resize: vertical;
+  margin-bottom: 10px;
+}
+
+/* Save / Cancel buttons */
+.save-edit {
+  background: linear-gradient(135deg, #2a9d8f, #1b7a6f);
+  color: white;
+}
+
+.cancel-edit {
+  background: linear-gradient(135deg, #adb5bd, #6c757d);
+  color: white;
+}
+#cards-container::-webkit-scrollbar {
+  width: 8px;
+}
+#cards-container::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.2);
   border-radius: 8px;
-  background: #f8f9fa;
-  padding: 12px;
- 
 }
-.reader h2,
-.flashcards h2 {
-  margin: 0 0 12px 0;
+/* Enable scrolling only inside flashcards list */
+#cards-container {
+  overflow-y: auto;
+  max-height: 320px;  /* adjust if you want more/less */
+}
+
+.app-footer {
+  background: linear-gradient(135deg, #6fcf9f, #3aa76d);
+  padding: 24px 16px;
+  margin-top: 5spx;
+}
+
+.footer-content {
+  text-align: center;
+  color: #03412f;
+  font-size: 14px;
+}
+
+.footer-name {
+  margin: 0 0 8px;
+  font-size: 15px;
+}
+
+.footer-links {
+  margin: 6px 0;
+}
+
+.footer-links a {
+  color: #03412f;
+  text-decoration: none;
+  font-weight: 500;
+  margin: 0 6px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-copy {
+  margin-top: 8px;
+  font-size: 13px;
+  opacity: 0.8;
 }
 
 
